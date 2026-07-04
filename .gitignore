@@ -1,0 +1,46 @@
+# Node
+node_modules/
+.next/
+.next-prod/
+out/
+npm-debug.log*
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+*.egg-info/
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# DB
+*.db
+*.sqlite
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.tsbuildinfo
+
+# Build artifacts
+out/
+dist/
+
+# AI tooling (Claude Code / oh-my-claudecode)
+.claude/
+.omc/
+CLAUDE.md
+AGENTS.md
+**/SKILL.md
+
+# 소유자 개인 배포용(폰/Tailscale) — 공개 안 함
+deploy/

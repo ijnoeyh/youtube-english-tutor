@@ -1,0 +1,16 @@
+# 리버스 프록시: 프론트+백엔드를 한 출처(:8080)로 합침 → CORS 불필요.
+# handle 블록은 위에서부터 첫 일치만 실행되므로 구체적 경로(/api, /health)를 먼저 둔다.
+
+:8080 {
+	handle /api/* {
+		reverse_proxy backend:8000
+	}
+
+	handle /health {
+		reverse_proxy backend:8000
+	}
+
+	handle {
+		reverse_proxy frontend:3000
+	}
+}

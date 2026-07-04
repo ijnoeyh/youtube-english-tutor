@@ -1,0 +1,234 @@
+@import "tw-animate-css";
+@import "shadcn/tailwind.css";
+
+/* ── 나눔바른고딕 (네이버 공식 webfont) ───────────────────────────────────
+   400(Regular) + 700(Bold) 두 가중치 로드. 한국어 + 영어 동시 커버.
+   ───────────────────────────────────────────────────────────────────── */
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('https://hangeul.pstatic.net/hangeul_static/webfont/nanum/NanumBarunGothic.woff2') format('woff2'),
+       url('https://hangeul.pstatic.net/hangeul_static/webfont/nanum/NanumBarunGothic.woff') format('woff'),
+       url('https://hangeul.pstatic.net/hangeul_static/webfont/nanum/NanumBarunGothic.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'NanumBarunGothic';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('https://hangeul.pstatic.net/hangeul_static/webfont/nanum/NanumBarunGothicBold.woff2') format('woff2'),
+       url('https://hangeul.pstatic.net/hangeul_static/webfont/nanum/NanumBarunGothicBold.woff') format('woff'),
+       url('https://hangeul.pstatic.net/hangeul_static/webfont/nanum/NanumBarunGothicBold.ttf') format('truetype');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  :root {
+    /* ── Toss-style : Light ────────────────────────────────────────── */
+    --background: #ffffff;
+    --foreground: #191f28;
+    --card: #ffffff;
+    --card-foreground: #191f28;
+    --popover: #ffffff;
+    --popover-foreground: #191f28;
+    --primary: #3182f6;             /* Toss Blue */
+    --primary-foreground: #ffffff;
+    --secondary: #f2f4f6;
+    --secondary-foreground: #4e5968;
+    --muted: #f9fafb;
+    --muted-foreground: #8b95a1;
+    --accent: #e8f3ff;              /* Light Blue surface */
+    --accent-foreground: #1b64da;
+    --destructive: #f04452;
+    --border: #e5e8eb;
+    --input: #e5e8eb;
+    --ring: #3182f6;
+    --radius: 0.875rem;
+    --sidebar: #ffffff;
+    --sidebar-foreground: #191f28;
+    --sidebar-primary: #3182f6;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #f2f4f6;
+    --sidebar-accent-foreground: #4e5968;
+    --sidebar-border: #e5e8eb;
+    --sidebar-ring: #3182f6;
+
+    /* Toss 컬러 팔레트 (그라데이션/직접 hex 용) */
+    --blue-50: #e8f3ff;
+    --blue-100: #d3e7ff;
+    --blue-200: #a8ccff;
+    --blue-300: #7eb3ff;
+    --blue-400: #4d8df8;
+    --blue-500: #3182f6;
+    --blue-600: #1b64da;
+    --blue-700: #1248a9;
+    --blue-800: #0e3c87;
+    --blue-900: #0a2c66;
+
+    --gray-50: #f9fafb;
+    --gray-100: #f2f4f6;
+    --gray-200: #e5e8eb;
+    --gray-300: #d1d6db;
+    --gray-400: #b0b8c1;
+    --gray-500: #8b95a1;
+    --gray-600: #6b7684;
+    --gray-700: #4e5968;
+    --gray-800: #333d4b;
+    --gray-900: #191f28;
+  }
+
+  .dark {
+    /* ── Toss-style : Dark (Navy) ──────────────────────────────────── */
+    --background: #0f1620;
+    --foreground: #e5e8eb;
+    --card: #18222f;
+    --card-foreground: #e5e8eb;
+    --popover: #18222f;
+    --popover-foreground: #e5e8eb;
+    --primary: #4d8df8;
+    --primary-foreground: #ffffff;
+    --secondary: #232c3a;
+    --secondary-foreground: #d1d6db;
+    --muted: #1c2531;
+    --muted-foreground: #8b95a1;
+    --accent: #1f3a73;
+    --accent-foreground: #b5d3ff;
+    --destructive: #f06b73;
+    --border: #29333f;
+    --input: #29333f;
+    --ring: #4d8df8;
+    --sidebar: #131b25;
+    --sidebar-foreground: #e5e8eb;
+    --sidebar-primary: #4d8df8;
+    --sidebar-primary-foreground: #ffffff;
+    --sidebar-accent: #232c3a;
+    --sidebar-accent-foreground: #d1d6db;
+    --sidebar-border: #29333f;
+    --sidebar-ring: #4d8df8;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'NanumBarunGothic', system-ui, -apple-system, 'Apple SD Gothic Neo', sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    /* 약간 굵은 톤 — 사용자 요청 "약간 Bold체" */
+    font-weight: 400;
+    letter-spacing: -0.005em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* 강조 텍스트 / 헤더는 Bold(700) 자동 적용 */
+  strong, b, h1, h2, h3, h4, h5, h6 {
+    font-weight: 700;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────────────
+   Toss-style 카드 & 인터랙션
+   ───────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* 기본 surface — 깨끗한 흰 카드 + 옅은 보더 + 아주 부드러운 그림자 */
+  .surface {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow:
+      0 1px 2px 0 rgba(0, 0, 0, 0.02),
+      0 4px 12px -2px rgba(15, 22, 32, 0.04);
+  }
+
+  .surface-strong {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: calc(var(--radius) + 0.25rem);
+    box-shadow:
+      0 1px 2px 0 rgba(0, 0, 0, 0.02),
+      0 8px 24px -4px rgba(15, 22, 32, 0.06);
+  }
+
+  /* 사이드바/탭바 같은 영역 — 보더만 없고 그림자도 거의 없음 */
+  .panel {
+    background: var(--sidebar);
+    border-right: 1px solid var(--sidebar-border);
+  }
+
+  /* 인터랙티브 카드 hover */
+  .card-interactive {
+    transition: transform 200ms cubic-bezier(0.22, 1, 0.36, 1),
+      box-shadow 200ms ease,
+      border-color 200ms ease;
+  }
+  .card-interactive:hover {
+    transform: translateY(-1px);
+    border-color: var(--primary);
+    box-shadow:
+      0 1px 2px 0 rgba(49, 130, 246, 0.04),
+      0 8px 24px -4px rgba(49, 130, 246, 0.12);
+  }
+
+  /* 강조 칩 / 배지 */
+  .chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.125rem 0.5rem;
+    border-radius: 999px;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    background: var(--accent);
+    color: var(--accent-foreground);
+  }
+}
+
+/* 스크롤바 — 토스처럼 매우 옅은 회색 */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--gray-200);
+  border-radius: 999px;
+  border: 2px solid transparent;
+  background-clip: padding-box;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--gray-300);
+  background-clip: padding-box;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #29333f;
+  background-clip: padding-box;
+}
+
+/* keyframes (tailwind config 에도 있지만 직접 클래스에서 쓰기 위해) */
+@keyframes fade-up {
+  0% { opacity: 0; transform: translateY(8px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

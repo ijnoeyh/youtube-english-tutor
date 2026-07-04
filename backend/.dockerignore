@@ -1,0 +1,16 @@
+# 이미지에 넣지 않을 것들 (빌드 컨텍스트에서 제외 → 빌드 빠르고 가벼움, 비밀유출 방지)
+venv/
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# 로컬 SQLite DB — 이미지에 넣으면 안 됨(데이터는 볼륨에서 관리)
+*.db
+*.sqlite
+
+# 비밀키 — env_file 로 런타임 주입하므로 이미지에 굽지 않는다
+.env
+
+.dockerignore
+Dockerfile
