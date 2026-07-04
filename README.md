@@ -34,9 +34,9 @@ Dictation, shadowing, and writing practice — with an AI tutor that tracks your
 ## 📸 Screenshots
 
 <div align="center">
-<img src="./docs/screenshots/home.png" alt="Home screen" width="260"/>
+<img src="./docs/screenshot/home.png" alt="Home screen" width="260"/>
 &nbsp;&nbsp;&nbsp;
-<img src="./docs/screenshots/study.png" alt="Study mode" width="260"/>
+<img src="./docs/screenshot/study.png" alt="Study mode" width="260"/>
 </div>
 
 ## 🚀 Quick start (Docker)
